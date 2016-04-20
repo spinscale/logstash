@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -e
 ##
 # Keep in mind to run ci/ci_setup.sh if you need to setup/clean up your environment before
 # running the test suites here.

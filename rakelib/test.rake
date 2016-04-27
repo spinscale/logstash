@@ -17,6 +17,18 @@ namespace "test" do
     require "rspec/core/runner"
     require "rspec"
     require 'ci/reporter/rake/rspec_loader'
+    setup_json_logging
+  end
+
+  def setup_json_logging
+    require "cabin"
+    require "logstash/logging/json"
+    Cabin::Channel.get(LogStash).tap do |logger|
+      # TODO(sissel): Open null on windows?
+      out = File.new("/dev/null", "a")
+      logger.subscribe(LogStash::Logging::JSON.new(out))
+      logger.level = :debug
+    end
   end
 
   def core_specs

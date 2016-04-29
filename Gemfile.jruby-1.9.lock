@@ -56,6 +56,16 @@ GIT
       logstash-core-plugin-api (~> 2.0)
 
 GIT
+  remote: git://github.com/logstash-plugins/logstash-filter-grok.git
+  revision: 284dc6614b0cac6770cda2c18a52f8405146f1eb
+  branch: feature/plugin-api-2_0
+  specs:
+    logstash-filter-grok (2.0.5)
+      jls-grok (~> 0.11.1)
+      logstash-core-plugin-api (~> 2.0)
+      logstash-patterns-core
+
+GIT
   remote: git://github.com/logstash-plugins/logstash-filter-multiline.git
   revision: fd1da31b7d1e0b44319c0f2865c767b36440583d
   branch: feature/plugin-api-2_0
@@ -299,6 +309,7 @@ DEPENDENCIES
   logstash-core-plugin-api (= 2.0.0)!
   logstash-devutils!
   logstash-filter-clone!
+  logstash-filter-grok!
   logstash-filter-multiline!
   logstash-filter-mutate!
   logstash-input-generator!
